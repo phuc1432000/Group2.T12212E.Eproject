@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s_10: Form </title>
+    <style>
+        input:required{
+            border: solid red;
+        }
+        input:valid{
+            color: green;
+        }
+        input:invalid{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- action="welcome.html link qua trang welcome " -->
+    <!-- Tinh tong: oninput="total.value=parseInt(product.value)*parseInt(qty.value)" -->
+    <form action="welcome.html" oninput="total.value=parseInt(product.value)*parseInt(qty.value)"> 
+        <!-- Phuc là gia tr noi dung mac dinh cua input -->
+        <!-- placeholder: làm mờ -->
+        <!-- a-z ký tự từ a-z minimum:3 và maximum:8 -->
+        Name: <input type="text"  placeholder="nhap ten cua ban" pattern="[a-z]{3,8}"/> <br>
+        <!-- password: để type=password ko để text -->
+        Password: <input type="password" required/> <br>
+        Email: <input type="email" autofocus> <br>
+        Url: <input type="url"> <br>
+        File: <input type="file"> <br>
+        <!-- min =1: chặn cận trên max = 1:chặn cận dưới  -->
+        Number: <input type="number" min="1" max="10"> <br>
+        <!-- Range: Khoảng s -->
+        Range: 0<input type="range"min="0" max="10">
+        Date: <input type="date"> <br>
+        Week: <input type="week"> <br>
+        Month: <input type="month"> <br>
+        Time: <input type="time"> <br>
+         <!-- Muốn chọn cái này bỏ cái kia: name="......" -->
+        Gender: <input type="radio" value="Male" name="gender"> Male 
+                <input type="radio" value="Female" name="gender"> Female <br>
+        Hobbies: <input type="checkbox" value="Sport" name="hob"> Sport 
+                 <input type="checkbox" value="Music" name="hob"> Music
+                 <input type="checkbox" value="Movie" name="hob"> Movie <br>
+        Select:   <select name="" id="">
+                    <option value="SG">Sai Gon</option> 
+                    <option value="HN">Ha Noi</option>
+                    <option value="CT">Can Tho</option> 
+        </select> <br>
+        DataList:
+            <input type="text" list="city">
+            <datalist id="city">
+                <option value="SG">Sai Gon</option> 
+                    <option value="HN">Ha Noi</option>
+                    <option value="CT">Can Tho</option> 
+            </datalist> <br>
+        Select product: 
+            <select name="product" id="">
+                <option value="400">Gold</option>
+                <option value="300">Sliver</option>
+                <option value="500">Diamond</option>
+            </select> <br>
+        Quantity: 
+            <input type="nunber" name="qty" min="1" max="10"> <br>
+            <output name="total"></output> $ <br>
+        Comment: <textarea name="" id="" cols="30" rows="10"></textarea> <br>
+         <!-- value là attribute của input  -->
+        <!-- submit gọi là button: nút -->
+        <input type="submit" value="DangKy"><br>
+    </form>
+</body>
+</html>
